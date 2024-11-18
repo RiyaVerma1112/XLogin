@@ -33,12 +33,10 @@ function Login() {
             <h1>Login Page</h1>
             {!isLoggedIn ? (
                 <form onSubmit={handleSubmit}>
-                <label style={{ display: 'block' }}>Username:
-                    <input type="text" name="username" value={username} required onChange={handleUsername} />
-                </label>
-                <label style={{ display: 'block' }}>Password:
-                    <input type="password" name="password" value={password} required onChange={handlePassword} />
-                </label>
+                <label htmlFor="username" style={{ display: 'block' }}>Username:</label>
+                <input type="text" id="username" name="username" value={username} required onChange={handleUsername} />
+                <label htmlFor="password" style={{ display: 'block' }}>Password:</label>
+                <input type="password" id="password" name="password" value={password} required onChange={handlePassword} />
                 <button type="submit">Submit</button>
                 </form>
             ) : (
@@ -47,12 +45,10 @@ function Login() {
                 ) : (
                 <form onSubmit={handleSubmit}>
                     <p>Invalid username or password</p>
-                    <label style={{ display: 'block' }}>Username:
-                    <input type="text" name="username" value={username} required onChange={handleUsername} />
-                    </label>
-                    <label style={{ display: 'block' }}>Password:
-                    <input type="password" name="password" value={password} required onChange={handlePassword} />
-                    </label>
+                    <label htmlFor="username" style={{ display: 'block' }}>Username:</label>
+                    <input type="text" id="username" name="username" value={username} required onChange={handleUsername} />
+                    <label htmlFor="password" style={{ display: 'block' }}>Password:</label>
+                    <input type="password" id="password" name="password" value={password} required onChange={handlePassword} />
                     <button type="submit">Submit</button>
                 </form>
                 )
