@@ -4,7 +4,7 @@ function Login() {
     const [username , setUsername] = useState("") ;
     const [password , setPassword] = useState("") ;
     const [isLoggedIn , setIsLoggedIn] = useState(false) ;
-    const [submitted , isSubmitted] = useState(false) ;
+    const [isSubmitted , setSubmitted] = useState(false) ;
 
     var correctUsername = "user" ;
     var correctPassword = "password" ;
@@ -21,37 +21,37 @@ function Login() {
         event.preventDefault() ;
         if(username === correctUsername && password === correctPassword) {
             setIsLoggedIn(true) ;
-            isSubmitted(true) ;
+            setSubmitted(true) ;
         }else {
-            setIsLoggedIn(false) ;
-            isSubmitted(false) ;
+            setIsLoggedIn(true) ;
+            setSubmitted(false) ;
         }
     }
 
     return (
         <div>
             <h1>Login Page</h1>
-            {!isSubmitted ? (
+            {!isLoggedIn ? (
                 <form onSubmit={handleSubmit}>
                 <label style={{ display: 'block' }}>Username:
-                    <input type="text" name="username" required onChange={handleUsername} />
+                    <input type="text" name="username" value={username} required onChange={handleUsername} />
                 </label>
                 <label style={{ display: 'block' }}>Password:
-                    <input type="password" name="password" required onChange={handlePassword} />
+                    <input type="password" name="password" value={password} required onChange={handlePassword} />
                 </label>
                 <button type="submit">Submit</button>
                 </form>
             ) : (
-                isLoggedIn ? (
+                isSubmitted ? (
                 <p>Welcome, user!</p>
                 ) : (
                 <form onSubmit={handleSubmit}>
                     <p>Invalid username or password</p>
                     <label style={{ display: 'block' }}>Username:
-                    <input type="text" name="username" required onChange={handleUsername} />
+                    <input type="text" name="username" value={username} required onChange={handleUsername} />
                     </label>
                     <label style={{ display: 'block' }}>Password:
-                    <input type="password" name="password" required onChange={handlePassword} />
+                    <input type="password" name="password" value={password} required onChange={handlePassword} />
                     </label>
                     <button type="submit">Submit</button>
                 </form>
