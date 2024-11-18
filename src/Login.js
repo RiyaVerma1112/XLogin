@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 function Login() {
-    const [username , setUsername] = useState("") ;
-    const [password , setPassword] = useState("") ;
+    const [username , setUsername] = useState(null) ;
+    const [password , setPassword] = useState(null) ;
     const [isLoggedIn , setIsLoggedIn] = useState(false) ;
     const [isSubmitted , setSubmitted] = useState(false) ;
 
